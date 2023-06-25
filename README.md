@@ -1,8 +1,11 @@
-# Svelte + Vite
+# Revim
+    Personal code editor inspired by vim with changes to suit my preference.
+    I am trying my best not to rely on third party libraries and as of this moment, I'm only using tauri with svelte.
 
-This template should help get you started developing with Tauri and Svelte in Vite.
+# Tech Stack
+## Frontend
+    Svelte
 
-## Recommended IDE Setup
-
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer).
+## Backend ?
+    Tauri (Rust)
 
