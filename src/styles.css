@@ -42,7 +42,6 @@
   overflow: auto;
   counter-reset: section;
   white-space: pre-wrap;
-  display: inline-block;
 }
 
 /* .line-number {
