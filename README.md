@@ -9,6 +9,12 @@ I am trying my best not to rely on third party libraries and as of this moment, 
 ## Backend ?
     Tauri (Rust)
 
+## Features that need to be added
+    Terminal
+    Line numbers
+    AI to help with code - iframe with phind / poe?
+    Autocompletion - at least () and "", preferably code completion as well
+
 ## Resources and references
 As mentioned before, I am trying my hardest to not rely on third part libraries but of course, it would just be ludicrous and just become painful. But as to not feel "guilty", I am referencing all of the sources I use.
 

@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap'); */
 /* @import url('https://fonts.cdnfonts.com/css/menlo'); */
-/* @import url('https://fonts.cdnfonts.com/css/dejavu-sans-mono'); */
+@import url('https://fonts.cdnfonts.com/css/dejavu-sans-mono');
 
 * {
   margin: 0;
@@ -8,10 +8,10 @@
 }
 
 :root {
-  font-family: 'Roboto Mono', monospace;
+  /* font-family: 'Roboto Mono', monospace; */
   /* font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif; */
   /* font-family: 'Menlo', sans-serif; */
-  /* font-family: 'DejaVu Sans Mono', sans-serif; */
+  font-family: 'DejaVu Sans Mono', sans-serif;
   font-size: 15px;
 
   color: #c2c2c2;
