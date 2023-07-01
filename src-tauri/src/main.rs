@@ -113,7 +113,7 @@ async fn phind_window(handle: tauri::AppHandle) {
 #[tauri::command]
 fn help_page() {
     // "https://github.com/AyeAreEm/revim"
-    let _ = open::that("https://github.com/AyeAreEm/revim");
+    let _ = open::that("https://github.com/AyeAreEm/revim#help");
 }
 
 fn terminal() {
