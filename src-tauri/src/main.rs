@@ -1,14 +1,12 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-// use tauri::{CustomMenuItem, Menu, MenuItem, Submenu};
 use std::fs;
 use std::env;
 use std::process::Command;
 use enigo::*;
 use open;
 
-// Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
 fn save_file(path: String, contents: String) {
     fs::write(path, contents).unwrap();
@@ -105,14 +103,13 @@ fn copy_paste(edit: char) {
 async fn phind_window(handle: tauri::AppHandle) {
     tauri::WindowBuilder::new(
         &handle,
-        "external", /* the unique window label */
+        "external",
         tauri::WindowUrl::External("https://www.phind.com".parse().unwrap())
     ).build().unwrap();
 }
 
 #[tauri::command]
 fn help_page() {
-    // "https://github.com/AyeAreEm/revim"
     let _ = open::that("https://github.com/AyeAreEm/revim#help");
 }
 

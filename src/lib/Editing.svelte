@@ -62,7 +62,7 @@
       }
     }, 1);
 
-    // maybe include the number system from vim so do an action
+    // maybe include the number system from vim to do an action
     // multiple times - maybe make an array
     // have a check for each event to see if its a number
     // if so, add to the array
@@ -119,8 +119,6 @@
 </script>
 
 <div class="editor">
-  <!-- <div class="numLines ignore">1</div> -->
-
   <div bind:this={value} style="background: transparent; color: transparent; caret-color: white;" class="editText" spellcheck="false" contenteditable="true" on:keydown={mode == "N" ? handleKeysPrev : handleKeys}></div>
   <div bind:this={code} class="editText"></div>
 
