@@ -26,9 +26,11 @@ Command::new("cmd")
 ## Resources and references
 As mentioned before, I am trying my hardest to not rely on third party libraries but of course, it would just be ludicrous and just become painful. But as to not feel "guilty", I am referencing all of the sources I use.
 
-[Enigo](https://docs.rs/enigo/latest/enigo/) (Rust)
-[Highlight.js](https://highlightjs.org/) (Javascript)
-[Open](https://docs.rs/open/latest/open/) (Rust)
+#### [Enigo](https://docs.rs/enigo/latest/enigo/) (Rust)
+
+#### [Highlight.js](https://highlightjs.org/) (Javascript)
+
+#### [Open](https://docs.rs/open/latest/open/) (Rust)
 
 ### Use of Enigo
 This crate allows for native keyboard and mouse events - I need this because when in `normal` mode, no characters should be able to be entered but I still need access to the functions those keys have. Such as arrow keys for navigation, the character V to allow for pasting, etc.
