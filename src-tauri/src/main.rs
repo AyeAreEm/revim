@@ -4,8 +4,9 @@
 // use tauri::{CustomMenuItem, Menu, MenuItem, Submenu};
 use std::fs;
 use std::env;
-// use std::process::Command;
+use std::process::Command;
 use enigo::*;
+use open;
 
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
@@ -68,15 +69,12 @@ fn new_line(direction: &str) {
         enigo.key_click(Key::Return);
         enigo.key_click(Key::UpArrow);
     } else if direction == "down" && env::consts::OS == "windows" {
-        enigo.key_down(Key::Control);
+        // can't figure out how to get this working on windows
         enigo.key_click(Key::Return);
-        enigo.key_up(Key::Control);
-    } else if direction == "down" && env::consts::OS == "windows" {
-        enigo.key_down(Key::Shift);
-        enigo.key_down(Key::Control);
+    } else if direction == "up" && env::consts::OS == "windows" {
+        // can't figure out how to get this working on windows
         enigo.key_click(Key::Return);
-        enigo.key_up(Key::Control);
-        enigo.key_down(Key::Shift);
+        enigo.key_click(Key::UpArrow);
     }
 }
 
@@ -104,23 +102,42 @@ fn copy_paste(edit: char) {
 }
 
 #[tauri::command]
-async fn open_docs(handle: tauri::AppHandle) {
-  tauri::WindowBuilder::new(
-    &handle,
-    "external", /* the unique window label */
-    tauri::WindowUrl::External("https://127.0.0.1:1420".parse().unwrap())
-  ).build().unwrap();
+async fn phind_window(handle: tauri::AppHandle) {
+    tauri::WindowBuilder::new(
+        &handle,
+        "external", /* the unique window label */
+        tauri::WindowUrl::External("https://www.phind.com".parse().unwrap())
+    ).build().unwrap();
+}
+
+#[tauri::command]
+fn help_page() {
+    // "https://github.com/AyeAreEm/revim"
+    let _ = open::that("https://github.com/AyeAreEm/revim");
+}
+
+fn terminal() {
+    if env::consts::OS == "windows" {
+        Command::new("cmd")
+                .spawn()
+                .expect("failed");
+        return;
+    }
+
+    Command::new("sh")
+            .spawn()
+            .expect("failed");
 }
 
 #[tauri::command]
 fn open_term() {
-    println!("ran open term command");
+    terminal();
 }
 
 fn main() {
     tauri::Builder::default()
         // .menu(menu)
-        .invoke_handler(tauri::generate_handler![save_file, move_direction, new_line, backspace, copy_paste, open_docs, open_term])
+        .invoke_handler(tauri::generate_handler![save_file, move_direction, new_line, backspace, copy_paste, phind_window, open_term, help_page])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

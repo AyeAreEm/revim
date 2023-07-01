@@ -94,8 +94,12 @@
             let word = command.substring(1);
             console.log(word);
         } else if (e.keyCode === 13 && command === ":help") {
-            await invoke("open_docs")
-        }else if (e.keyCode === 13 && command === "") {
+            await invoke("help_page")
+        } else if (e.keyCode === 13 && command === ":term") {
+            await invoke("open_term")
+        } else if (e.keyCode === 13 && command === ":phind") {
+            await invoke("phind_window")
+        } else if (e.keyCode === 13 && command === "") {
             value.focus();
             mode = "I";
         }
