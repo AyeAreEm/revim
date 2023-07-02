@@ -100,8 +100,10 @@
         } else if (e.keyCode === 13 && command === ":phind") {
             await invoke("phind_window")
         } else if (e.keyCode === 13 && command === "") {
-            value.focus();
-            mode = "I";
+            setTimeout(() => {
+                value.focus();
+                mode = "I";
+            }, 1);
         }
     }
 </script>
